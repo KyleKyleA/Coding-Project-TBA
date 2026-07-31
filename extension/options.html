@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Focus &amp; Study — Options</title>
+  <style>
+    /* Minimal placeholder styling — real design TBD */
+    body { font-family: system-ui, sans-serif; max-width: 480px; margin: 32px auto; padding: 0 16px; }
+    h1 { font-size: 20px; }
+    h2 { font-size: 16px; margin-top: 24px; }
+    fieldset { border: 1px solid #ddd; border-radius: 4px; margin-top: 16px; }
+    fieldset label { display: block; margin: 6px 0; }
+    .add-row { display: flex; gap: 8px; }
+    .add-row input { flex: 1; padding: 6px; }
+    ul { list-style: none; padding: 0; }
+    li { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid #eee; }
+    .settings-row { display: flex; align-items: center; gap: 8px; margin: 8px 0; }
+    .settings-row input { width: 64px; padding: 4px; }
+    .hint { font-size: 12px; color: #777; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <h1>Focus &amp; Study — Options</h1>
+
+  <fieldset>
+    <legend>Focus mode</legend>
+    <label>
+      <input type="radio" name="blocking-mode" value="allowlist" />
+      Block <strong>everything except</strong> my allowed sites (study portal mode)
+    </label>
+    <label>
+      <input type="radio" name="blocking-mode" value="blocklist" />
+      Block <strong>only</strong> the sites I list (blocklist mode)
+    </label>
+  </fieldset>
+
+  <section id="allowlist-section">
+    <h2>Allowed domains</h2>
+    <p class="hint">Only these domains (and their subdomains) stay usable during a focus session. Everything else is blocked. Example: <code>myuni.edu</code></p>
+    <div class="add-row">
+      <input type="text" id="allowlist-input" placeholder="e.g. myuni.edu" />
+      <button id="allowlist-add-btn">Add</button>
+    </div>
+    <ul id="allowlist-list"></ul>
+  </section>
+
+  <section id="blocklist-section">
+    <h2>Blocked domains</h2>
+    <p class="hint">These domains (and their subdomains) are blocked while a focus session is active. Example: <code>youtube.com</code></p>
+    <div class="add-row">
+      <input type="text" id="blocklist-input" placeholder="e.g. youtube.com" />
+      <button id="blocklist-add-btn">Add</button>
+    </div>
+    <ul id="blocklist-list"></ul>
+  </section>
+
+  <h2>Pomodoro settings</h2>
+  <div class="settings-row">
+    <label for="work-minutes">Work minutes</label>
+    <input type="number" id="work-minutes" min="1" max="120" />
+  </div>
+  <div class="settings-row">
+    <label for="break-minutes">Break minutes</label>
+    <input type="number" id="break-minutes" min="1" max="60" />
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

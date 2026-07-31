@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Focus &amp; Study</title>
+  <style>
+    /* Minimal placeholder styling — real design TBD */
+    body {
+      font-family: system-ui, sans-serif;
+      width: 280px;
+      margin: 0;
+      padding: 16px;
+    }
+    h1 { font-size: 16px; margin: 0 0 12px; }
+    label { display: block; margin: 8px 0 4px; font-size: 13px; }
+    select, input, button { width: 100%; box-sizing: border-box; padding: 6px; }
+    button { margin-top: 12px; cursor: pointer; }
+    #countdown { font-size: 28px; text-align: center; margin: 12px 0; font-variant-numeric: tabular-nums; }
+    #phase-label { text-align: center; font-size: 13px; color: #555; }
+    .hidden { display: none; }
+    footer { margin-top: 12px; font-size: 12px; text-align: center; }
+    footer a { cursor: pointer; text-decoration: underline; color: #0066cc; }
+  </style>
+</head>
+<body>
+  <h1>Focus &amp; Study</h1>
+
+  <!-- Shown when no session is running -->
+  <section id="start-view">
+    <label for="technique">Technique</label>
+    <select id="technique">
+      <option value="plain-lock">Plain lock</option>
+      <option value="pomodoro">Pomodoro</option>
+      <option value="feynman">Feynman (notes + optional lock)</option>
+    </select>
+
+    <div id="duration-row">
+      <label for="duration">Duration (minutes)</label>
+      <input type="number" id="duration" min="1" max="480" value="25" />
+    </div>
+
+    <button id="start-btn">Start session</button>
+  </section>
+
+  <!-- Shown when a session is active -->
+  <section id="active-view" class="hidden">
+    <div id="phase-label"></div>
+    <div id="countdown">--:--</div>
+    <button id="stop-btn">Stop session</button>
+    <button id="notes-btn" class="hidden">Open Feynman notes</button>
+  </section>
+
+  <footer>
+    <a id="options-link">Manage allowed/blocked sites</a>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

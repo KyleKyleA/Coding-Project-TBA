@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blocked — Focus Session Active</title>
+  <style>
+    /* Minimal placeholder styling — real design TBD */
+    body {
+      font-family: system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    h1 { font-size: 28px; margin-bottom: 8px; }
+    #remaining { font-size: 48px; font-variant-numeric: tabular-nums; margin: 16px 0; }
+    #message { color: #555; max-width: 420px; }
+    #exit-area { margin-top: 32px; }
+    #exit-btn { padding: 8px 16px; cursor: pointer; }
+    #confirm-area { margin-top: 8px; }
+    #confirm-area button { padding: 8px 16px; cursor: pointer; margin: 0 4px; }
+    #confirm-end-btn { color: #fff; background: #c0392b; border: none; border-radius: 4px; }
+    .hint { font-size: 13px; color: #888; max-width: 380px; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <h1>This site is locked</h1>
+  <p>Your focus session is still running.</p>
+  <div id="remaining">--:--</div>
+  <p id="message"></p>
+
+  <!-- Safety exit: always available, but with a little friction so it's a
+       deliberate choice rather than a reflex. -->
+  <div id="exit-area">
+    <button id="exit-btn">I need to exit my focus session</button>
+    <div id="confirm-area" class="hidden">
+      <p class="hint">This ends the session and unblocks every site. You can wait <span id="cooldown">5</span>s or go back to studying.</p>
+      <button id="confirm-end-btn" disabled>End session now</button>
+      <button id="cancel-btn">Keep focusing</button>
+    </div>
+  </div>
+
+  <script src="blocked.js"></script>
+</body>
+</html>

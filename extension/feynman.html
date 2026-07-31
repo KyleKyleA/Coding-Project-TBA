@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Feynman Technique — Notes</title>
+  <style>
+    /* Minimal placeholder styling — real design TBD */
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 32px auto; padding: 0 16px; }
+    h1 { font-size: 22px; }
+    label { display: block; font-weight: 600; margin: 20px 0 4px; }
+    .hint { font-size: 13px; color: #777; margin: 0 0 6px; }
+    input[type="text"], textarea { width: 100%; box-sizing: border-box; padding: 8px; font: inherit; }
+    textarea { min-height: 96px; resize: vertical; }
+    #status { font-size: 13px; color: #2a7; margin-top: 12px; min-height: 1em; }
+  </style>
+</head>
+<body>
+  <h1>Feynman Technique</h1>
+  <p class="hint">Notes save automatically as you type.</p>
+
+  <label for="topic">Topic</label>
+  <input type="text" id="topic" placeholder="What are you studying?" />
+
+  <label for="step1">1. Explain it simply</label>
+  <p class="hint">Write the concept as if teaching it to someone with no background.</p>
+  <textarea id="step1"></textarea>
+
+  <label for="step2">2. Identify gaps</label>
+  <p class="hint">Where did you get stuck, hand-wave, or rely on jargon?</p>
+  <textarea id="step2"></textarea>
+
+  <label for="step3">3. Review and fill in</label>
+  <p class="hint">Go back to your source material and close those gaps.</p>
+  <textarea id="step3"></textarea>
+
+  <label for="step4">4. Simplify again</label>
+  <p class="hint">Rewrite your explanation even more simply, using analogies.</p>
+  <textarea id="step4"></textarea>
+
+  <div id="status"></div>
+
+  <script src="feynman.js"></script>
+</body>
+</html>
