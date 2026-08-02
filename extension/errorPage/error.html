@@ -7,6 +7,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error 404</title>
+    
+    <!-- Minimal Styling for the Error Page -->
+    <style>
+    
+   
+        body {
+
+            background-color: #f8f9fa;
+
+        }
+
+        .error-page {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .error-code {
+
+            font-size: 72px;
+            font-weight: bold;
+            color: #dc3545;
+        }
+
+        .error-message {
+
+            font-size: 24px;
+            color: #dc3545;
+        }
+
+        .error-description {
+
+            font-size: 16px;
+            color: #6c757d;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
    
@@ -17,7 +62,7 @@
             <h2 className="error-message">Page Not Found</h2>
             <p class="error-description"> The page you are looking for is not available.</p>
             <div class="d-flex justify-content-center gap-3">
-                <a href="popup.html" class="btn btn-primary px-4 py-2">Return to Extension</a>
+                <a href="/extension/popup.html" class="btn btn-primary px-4 py-2">Return to Extension</a>
             </div>
         </div>
     </div>
