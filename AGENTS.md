@@ -25,6 +25,7 @@ extension/
 ├── popup.html / popup.js (session controls, technique picker, live timer)
 ├── blocked.html          (shown when a blocklisted domain is hit mid-session)
 └── options.html / options.js (manage the domain blocklist)
+└── error.html / error.js(manages errors when the extension is failing it lets the user known when they can't use the extension when the server is done)
 ```
 
 ### manifest.json
@@ -88,3 +89,4 @@ extension/
 - Cross-device sync of blocklist/settings.
 - Additional study techniques beyond Pomodoro and Feynman.
 - Analytics/session history dashboard.
+- Promotional Website to promote to users for demo use once were finished.
