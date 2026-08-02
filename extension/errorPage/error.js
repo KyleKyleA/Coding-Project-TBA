@@ -10,6 +10,10 @@
 // TODO: Add more http status codes and their corresponding error messages to the error page.";
 // After v1 is  complete
 // This is essentially a react component that will render the error page when an error is thrown in the extension
+
+
+// rest of the http status codes will render in the backend in console
+// and maybe frontend if decided.
 class SimpleErrorBoundary extends Error {
 
     constructor(props) {
